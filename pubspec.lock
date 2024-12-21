@@ -172,7 +172,7 @@ packages:
       path: "../core_module"
       relative: true
     source: path
-    version: "1.0.0+1"
+    version: "1.0.1+1"
   crypto:
     dependency: transitive
     description:
