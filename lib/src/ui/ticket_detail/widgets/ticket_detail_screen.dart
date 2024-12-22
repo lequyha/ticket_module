@@ -19,7 +19,7 @@ class TicketDetailScreen extends StatelessWidget {
           getIt<TicketDetailBloc>()..add(TicketFetched(ticketId: ticketId)),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Ticket Detail $ticketId 1'),
+          title: Text('Ticket Detail $ticketId'),
         ),
         body: SafeArea(
           child: BlocBuilder<TicketDetailBloc, TicketDetailState>(
