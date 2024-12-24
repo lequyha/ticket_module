@@ -1,8 +1,10 @@
 import 'package:core_module/core_module.dart';
+import 'package:injectable/injectable.dart';
 import 'package:ticket_module/src/data/service/ticket_service.dart';
 import 'package:ticket_module/src/domain/models/full_ticket_model.dart';
 import 'package:ticket_module/src/domain/remote/ticket_repository.dart';
 
+@LazySingleton(as: TicketRepository)
 class TicketRepositoryImpl extends BaseApiRepository
     implements TicketRepository {
   final TicketService _ticketService;

@@ -101,4 +101,5 @@ enum BaseControlType {
   datetime,
   picker,
   time,
+  apiweb,
 }

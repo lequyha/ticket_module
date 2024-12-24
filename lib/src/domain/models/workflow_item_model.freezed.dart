@@ -24,10 +24,10 @@ mixin _$WorkflowItemModel {
   String? get image => throw _privateConstructorUsedError;
   int? get displayId => throw _privateConstructorUsedError;
   WorkflowType? get type => throw _privateConstructorUsedError;
-  double? get startX => throw _privateConstructorUsedError;
-  double? get startY => throw _privateConstructorUsedError;
-  double? get endX => throw _privateConstructorUsedError;
-  double? get endY => throw _privateConstructorUsedError;
+  double get startX => throw _privateConstructorUsedError;
+  double get startY => throw _privateConstructorUsedError;
+  double get endX => throw _privateConstructorUsedError;
+  double get endY => throw _privateConstructorUsedError;
   PhaseStatus? get phaseStatus => throw _privateConstructorUsedError;
   TicketStatus? get ticketStatus => throw _privateConstructorUsedError;
   String? get owner => throw _privateConstructorUsedError;
@@ -62,10 +62,10 @@ abstract class $WorkflowItemModelCopyWith<$Res> {
       String? image,
       int? displayId,
       WorkflowType? type,
-      double? startX,
-      double? startY,
-      double? endX,
-      double? endY,
+      double startX,
+      double startY,
+      double endX,
+      double endY,
       PhaseStatus? phaseStatus,
       TicketStatus? ticketStatus,
       String? owner,
@@ -98,10 +98,10 @@ class _$WorkflowItemModelCopyWithImpl<$Res, $Val extends WorkflowItemModel>
     Object? image = freezed,
     Object? displayId = freezed,
     Object? type = freezed,
-    Object? startX = freezed,
-    Object? startY = freezed,
-    Object? endX = freezed,
-    Object? endY = freezed,
+    Object? startX = null,
+    Object? startY = null,
+    Object? endX = null,
+    Object? endY = null,
     Object? phaseStatus = freezed,
     Object? ticketStatus = freezed,
     Object? owner = freezed,
@@ -131,22 +131,22 @@ class _$WorkflowItemModelCopyWithImpl<$Res, $Val extends WorkflowItemModel>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as WorkflowType?,
-      startX: freezed == startX
+      startX: null == startX
           ? _value.startX
           : startX // ignore: cast_nullable_to_non_nullable
-              as double?,
-      startY: freezed == startY
+              as double,
+      startY: null == startY
           ? _value.startY
           : startY // ignore: cast_nullable_to_non_nullable
-              as double?,
-      endX: freezed == endX
+              as double,
+      endX: null == endX
           ? _value.endX
           : endX // ignore: cast_nullable_to_non_nullable
-              as double?,
-      endY: freezed == endY
+              as double,
+      endY: null == endY
           ? _value.endY
           : endY // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       phaseStatus: freezed == phaseStatus
           ? _value.phaseStatus
           : phaseStatus // ignore: cast_nullable_to_non_nullable
@@ -208,10 +208,10 @@ abstract class _$$WorkflowItemModelImplCopyWith<$Res>
       String? image,
       int? displayId,
       WorkflowType? type,
-      double? startX,
-      double? startY,
-      double? endX,
-      double? endY,
+      double startX,
+      double startY,
+      double endX,
+      double endY,
       PhaseStatus? phaseStatus,
       TicketStatus? ticketStatus,
       String? owner,
@@ -242,10 +242,10 @@ class __$$WorkflowItemModelImplCopyWithImpl<$Res>
     Object? image = freezed,
     Object? displayId = freezed,
     Object? type = freezed,
-    Object? startX = freezed,
-    Object? startY = freezed,
-    Object? endX = freezed,
-    Object? endY = freezed,
+    Object? startX = null,
+    Object? startY = null,
+    Object? endX = null,
+    Object? endY = null,
     Object? phaseStatus = freezed,
     Object? ticketStatus = freezed,
     Object? owner = freezed,
@@ -275,22 +275,22 @@ class __$$WorkflowItemModelImplCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as WorkflowType?,
-      startX: freezed == startX
+      startX: null == startX
           ? _value.startX
           : startX // ignore: cast_nullable_to_non_nullable
-              as double?,
-      startY: freezed == startY
+              as double,
+      startY: null == startY
           ? _value.startY
           : startY // ignore: cast_nullable_to_non_nullable
-              as double?,
-      endX: freezed == endX
+              as double,
+      endX: null == endX
           ? _value.endX
           : endX // ignore: cast_nullable_to_non_nullable
-              as double?,
-      endY: freezed == endY
+              as double,
+      endY: null == endY
           ? _value.endY
           : endY // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       phaseStatus: freezed == phaseStatus
           ? _value.phaseStatus
           : phaseStatus // ignore: cast_nullable_to_non_nullable
@@ -347,10 +347,10 @@ class _$WorkflowItemModelImpl implements _WorkflowItemModel {
       this.image,
       this.displayId,
       this.type,
-      this.startX,
-      this.startY,
-      this.endX,
-      this.endY,
+      this.startX = 0.0,
+      this.startY = 0.0,
+      this.endX = 0.0,
+      this.endY = 0.0,
       this.phaseStatus,
       this.ticketStatus,
       this.owner,
@@ -375,13 +375,17 @@ class _$WorkflowItemModelImpl implements _WorkflowItemModel {
   @override
   final WorkflowType? type;
   @override
-  final double? startX;
+  @JsonKey()
+  final double startX;
   @override
-  final double? startY;
+  @JsonKey()
+  final double startY;
   @override
-  final double? endX;
+  @JsonKey()
+  final double endX;
   @override
-  final double? endY;
+  @JsonKey()
+  final double endY;
   @override
   final PhaseStatus? phaseStatus;
   @override
@@ -496,10 +500,10 @@ abstract class _WorkflowItemModel implements WorkflowItemModel {
       final String? image,
       final int? displayId,
       final WorkflowType? type,
-      final double? startX,
-      final double? startY,
-      final double? endX,
-      final double? endY,
+      final double startX,
+      final double startY,
+      final double endX,
+      final double endY,
       final PhaseStatus? phaseStatus,
       final TicketStatus? ticketStatus,
       final String? owner,
@@ -524,13 +528,13 @@ abstract class _WorkflowItemModel implements WorkflowItemModel {
   @override
   WorkflowType? get type;
   @override
-  double? get startX;
+  double get startX;
   @override
-  double? get startY;
+  double get startY;
   @override
-  double? get endX;
+  double get endX;
   @override
-  double? get endY;
+  double get endY;
   @override
   PhaseStatus? get phaseStatus;
   @override

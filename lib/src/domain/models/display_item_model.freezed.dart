@@ -23,7 +23,7 @@ mixin _$DisplaytemModel {
   String? get image => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
   DisplayType? get type => throw _privateConstructorUsedError;
-  List<double>? get positions => throw _privateConstructorUsedError;
+  List<double> get positions => throw _privateConstructorUsedError;
 
   /// Serializes this DisplaytemModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -42,7 +42,7 @@ abstract class $DisplaytemModelCopyWith<$Res> {
       _$DisplaytemModelCopyWithImpl<$Res, DisplaytemModel>;
   @useResult
   $Res call(
-      {String? image, int? id, DisplayType? type, List<double>? positions});
+      {String? image, int? id, DisplayType? type, List<double> positions});
 }
 
 /// @nodoc
@@ -63,7 +63,7 @@ class _$DisplaytemModelCopyWithImpl<$Res, $Val extends DisplaytemModel>
     Object? image = freezed,
     Object? id = freezed,
     Object? type = freezed,
-    Object? positions = freezed,
+    Object? positions = null,
   }) {
     return _then(_value.copyWith(
       image: freezed == image
@@ -78,10 +78,10 @@ class _$DisplaytemModelCopyWithImpl<$Res, $Val extends DisplaytemModel>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as DisplayType?,
-      positions: freezed == positions
+      positions: null == positions
           ? _value.positions
           : positions // ignore: cast_nullable_to_non_nullable
-              as List<double>?,
+              as List<double>,
     ) as $Val);
   }
 }
@@ -95,7 +95,7 @@ abstract class _$$DisplaytemModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? image, int? id, DisplayType? type, List<double>? positions});
+      {String? image, int? id, DisplayType? type, List<double> positions});
 }
 
 /// @nodoc
@@ -114,7 +114,7 @@ class __$$DisplaytemModelImplCopyWithImpl<$Res>
     Object? image = freezed,
     Object? id = freezed,
     Object? type = freezed,
-    Object? positions = freezed,
+    Object? positions = null,
   }) {
     return _then(_$DisplaytemModelImpl(
       image: freezed == image
@@ -129,10 +129,10 @@ class __$$DisplaytemModelImplCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as DisplayType?,
-      positions: freezed == positions
+      positions: null == positions
           ? _value._positions
           : positions // ignore: cast_nullable_to_non_nullable
-              as List<double>?,
+              as List<double>,
     ));
   }
 }
@@ -141,7 +141,10 @@ class __$$DisplaytemModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DisplaytemModelImpl implements _DisplaytemModel {
   const _$DisplaytemModelImpl(
-      {this.image, this.id, this.type, final List<double>? positions})
+      {this.image,
+      this.id,
+      this.type,
+      final List<double> positions = const [0.0, 0.0]})
       : _positions = positions;
 
   factory _$DisplaytemModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -153,14 +156,13 @@ class _$DisplaytemModelImpl implements _DisplaytemModel {
   final int? id;
   @override
   final DisplayType? type;
-  final List<double>? _positions;
+  final List<double> _positions;
   @override
-  List<double>? get positions {
-    final value = _positions;
-    if (value == null) return null;
+  @JsonKey()
+  List<double> get positions {
     if (_positions is EqualUnmodifiableListView) return _positions;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_positions);
   }
 
   @override
@@ -207,7 +209,7 @@ abstract class _DisplaytemModel implements DisplaytemModel {
       {final String? image,
       final int? id,
       final DisplayType? type,
-      final List<double>? positions}) = _$DisplaytemModelImpl;
+      final List<double> positions}) = _$DisplaytemModelImpl;
 
   factory _DisplaytemModel.fromJson(Map<String, dynamic> json) =
       _$DisplaytemModelImpl.fromJson;
@@ -219,7 +221,7 @@ abstract class _DisplaytemModel implements DisplaytemModel {
   @override
   DisplayType? get type;
   @override
-  List<double>? get positions;
+  List<double> get positions;
 
   /// Create a copy of DisplaytemModel
   /// with the given fields replaced by the non-null parameter values.

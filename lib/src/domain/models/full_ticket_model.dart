@@ -45,8 +45,8 @@ class FullTicketModel with _$FullTicketModel {
               : relativeItem.zoomFrom != null
                   ? WorkflowType.zoom
                   : WorkflowType.phase,
-          startX: displayItem.positions?[0],
-          startY: displayItem.positions?[1],
+          startX: displayItem.positions[0],
+          startY: displayItem.positions[1],
           phaseStatus: displayItem.type == DisplayType.phase
               ? enumFromString(PhaseStatus.values, relativeItem.status)
               : null,

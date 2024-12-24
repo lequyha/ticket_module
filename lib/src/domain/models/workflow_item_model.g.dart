@@ -13,10 +13,10 @@ _$WorkflowItemModelImpl _$$WorkflowItemModelImplFromJson(
       image: json['image'] as String?,
       displayId: (json['displayId'] as num?)?.toInt(),
       type: $enumDecodeNullable(_$WorkflowTypeEnumMap, json['type']),
-      startX: (json['startX'] as num?)?.toDouble(),
-      startY: (json['startY'] as num?)?.toDouble(),
-      endX: (json['endX'] as num?)?.toDouble(),
-      endY: (json['endY'] as num?)?.toDouble(),
+      startX: (json['startX'] as num?)?.toDouble() ?? 0.0,
+      startY: (json['startY'] as num?)?.toDouble() ?? 0.0,
+      endX: (json['endX'] as num?)?.toDouble() ?? 0.0,
+      endY: (json['endY'] as num?)?.toDouble() ?? 0.0,
       phaseStatus:
           $enumDecodeNullable(_$PhaseStatusEnumMap, json['phaseStatus']),
       ticketStatus:
@@ -40,10 +40,10 @@ Map<String, dynamic> _$$WorkflowItemModelImplToJson(
       if (instance.image case final value?) 'image': value,
       if (instance.displayId case final value?) 'displayId': value,
       if (_$WorkflowTypeEnumMap[instance.type] case final value?) 'type': value,
-      if (instance.startX case final value?) 'startX': value,
-      if (instance.startY case final value?) 'startY': value,
-      if (instance.endX case final value?) 'endX': value,
-      if (instance.endY case final value?) 'endY': value,
+      'startX': instance.startX,
+      'startY': instance.startY,
+      'endX': instance.endX,
+      'endY': instance.endY,
       if (_$PhaseStatusEnumMap[instance.phaseStatus] case final value?)
         'phaseStatus': value,
       if (_$TicketStatusEnumMap[instance.ticketStatus] case final value?)

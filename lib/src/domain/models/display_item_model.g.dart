@@ -13,8 +13,9 @@ _$DisplaytemModelImpl _$$DisplaytemModelImplFromJson(
       id: (json['id'] as num?)?.toInt(),
       type: $enumDecodeNullable(_$DisplayTypeEnumMap, json['type']),
       positions: (json['positions'] as List<dynamic>?)
-          ?.map((e) => (e as num).toDouble())
-          .toList(),
+              ?.map((e) => (e as num).toDouble())
+              .toList() ??
+          const [0.0, 0.0],
     );
 
 Map<String, dynamic> _$$DisplaytemModelImplToJson(
@@ -23,7 +24,7 @@ Map<String, dynamic> _$$DisplaytemModelImplToJson(
       if (instance.image case final value?) 'image': value,
       if (instance.id case final value?) 'id': value,
       if (_$DisplayTypeEnumMap[instance.type] case final value?) 'type': value,
-      if (instance.positions case final value?) 'positions': value,
+      'positions': instance.positions,
     };
 
 const _$DisplayTypeEnumMap = {

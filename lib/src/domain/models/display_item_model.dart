@@ -15,7 +15,7 @@ class DisplaytemModel with _$DisplaytemModel {
     final String? image,
     final int? id,
     final DisplayType? type,
-    final List<double>? positions,
+    @Default([0.0, 0.0]) final List<double> positions,
   }) = _DisplaytemModel;
 
   factory DisplaytemModel.fromJson(Map<String, dynamic> json) =>
