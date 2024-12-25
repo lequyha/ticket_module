@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ticket_module/src/ui/ticket_detail/bloc/ticket_detail_bloc.dart';
+import 'package:ticket_module/src/ui/ticket_detail/widgets/ticket_detail_tabbar.dart';
 
 class TicketDetailScreen extends StatelessWidget {
   final int ticketId;
@@ -27,7 +28,7 @@ class TicketDetailScreen extends StatelessWidget {
               AppBar(
                 backgroundColor: Colors.transparent,
                 title: Text(
-                  'Ticket',
+                  'Ticket [$ticketId]',
                   style: context.textTheme.kBaseSemibold,
                 ),
                 centerTitle: true,
@@ -54,9 +55,10 @@ class TicketDetailScreen extends StatelessWidget {
                 child: Container(
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(
-                        AppBorderRadius.kLargeBorderRadius),
+                    color: AppColors.kMainBackgroundColor,
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(AppBorderRadius.kLargeBorderRadius),
+                    ),
                   ),
                   child: BlocBuilder<TicketDetailBloc, TicketDetailState>(
                     builder: (context, state) {
@@ -67,16 +69,7 @@ class TicketDetailScreen extends StatelessWidget {
                           );
                         default:
                       }
-                      return Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const <Widget>[
-                            Text(
-                              'Ticket Detail',
-                            ),
-                          ],
-                        ),
-                      );
+                      return TicketDetailTabbar();
                     },
                   ),
                 ),

@@ -31,9 +31,7 @@ dependencies:
   dio: ^5.7.0
   retrofit: ^4.4.1
   core_module:
-    git:
-      url: https://github.com/lequyha/core_module.git
-      ref: main
+    path: ../core_module
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
   flutter_bloc: ^8.1.6
