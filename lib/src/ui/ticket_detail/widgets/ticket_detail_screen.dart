@@ -43,7 +43,7 @@ class TicketDetailScreen extends StatelessWidget {
                         child: IconButton(
                           icon: const Icon(Icons.workspaces_filled),
                           onPressed: () => context.push(Routes.kWorkflow,
-                              extra: state.fullTicket?.getWorkflowList() ?? []),
+                              extra: state.fullTicket.getWorkflowList()),
                         ),
                       );
                     },
@@ -60,18 +60,7 @@ class TicketDetailScreen extends StatelessWidget {
                       top: Radius.circular(AppBorderRadius.kLargeBorderRadius),
                     ),
                   ),
-                  child: BlocBuilder<TicketDetailBloc, TicketDetailState>(
-                    builder: (context, state) {
-                      switch (state.status) {
-                        case TicketDetailStatus.initial:
-                          return const Center(
-                            child: CircularProgressIndicator(),
-                          );
-                        default:
-                      }
-                      return TicketDetailTabbar();
-                    },
-                  ),
+                  child: TicketDetailTabbar(),
                 ),
               ),
             ],

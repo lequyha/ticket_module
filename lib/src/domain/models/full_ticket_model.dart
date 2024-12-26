@@ -17,7 +17,9 @@ class FullTicketModel with _$FullTicketModel {
   const FullTicketModel._();
 
   const factory FullTicketModel({
-    @JsonKey(name: 'TicketInfos') final TicketModel? ticket,
+    @Default(TicketModel.empty)
+    @JsonKey(name: 'TicketInfos')
+    final TicketModel ticket,
     @JsonKey(name: 'display') @Default([]) final List<DisplaytemModel> displays,
     @Default([]) final List<RelationshipItemModel> relationships,
     @Default([]) final List<RelativeItemModel> relatives,
@@ -27,6 +29,10 @@ class FullTicketModel with _$FullTicketModel {
     @Default([]) @JsonKey(name: 'PhaseOutput') final List<IOPhaseModel> outputs,
     @Default(0) @JsonKey(name: 'TicketRole') final int ticketRole,
   }) = _FullTicketModel;
+
+  static const fakeData = FullTicketModel(
+    ticket: TicketModel.fakeData,
+  );
 
   List<WorkflowItemModel> getWorkflowList() {
     final List<WorkflowItemModel> workflowList = [];
@@ -111,17 +117,17 @@ class FullTicketModel with _$FullTicketModel {
       _$FullTicketModelFromJson(json);
 
   bool canCancelTicket() {
-    return ticketRole > 3 && (ticket?.canCancelTicket() ?? false);
+    return ticketRole > 3 && (ticket.canCancelTicket());
   }
 
   bool canChangeImplementer() {
     return ticketRole < 4 &&
-        (ticket?.canChangeImplementer() ?? false) &&
+        (ticket.canChangeImplementer()) &&
         (phase?.canChangeImplementer() ?? false);
   }
 
   bool canRatingTicket() {
-    return ticketRole > 3 && ticket?.status == TicketStatus.finished;
+    return ticketRole > 3 && ticket.status == TicketStatus.finished;
   }
 }
 

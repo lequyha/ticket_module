@@ -10,7 +10,7 @@ _$FullTicketModelImpl _$$FullTicketModelImplFromJson(
         Map<String, dynamic> json) =>
     _$FullTicketModelImpl(
       ticket: json['TicketInfos'] == null
-          ? null
+          ? TicketModel.empty
           : TicketModel.fromJson(json['TicketInfos'] as Map<String, dynamic>),
       displays: (json['display'] as List<dynamic>?)
               ?.map((e) => DisplaytemModel.fromJson(e as Map<String, dynamic>))
@@ -47,7 +47,7 @@ _$FullTicketModelImpl _$$FullTicketModelImplFromJson(
 Map<String, dynamic> _$$FullTicketModelImplToJson(
         _$FullTicketModelImpl instance) =>
     <String, dynamic>{
-      if (instance.ticket?.toJson() case final value?) 'TicketInfos': value,
+      'TicketInfos': instance.ticket.toJson(),
       'display': instance.displays.map((e) => e.toJson()).toList(),
       'relationships': instance.relationships.map((e) => e.toJson()).toList(),
       'relatives': instance.relatives.map((e) => e.toJson()).toList(),

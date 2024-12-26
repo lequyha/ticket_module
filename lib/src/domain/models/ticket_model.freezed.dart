@@ -20,22 +20,22 @@ TicketModel _$TicketModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TicketModel {
-  int? get ticketId => throw _privateConstructorUsedError;
-  String? get title => throw _privateConstructorUsedError;
-  String? get processName => throw _privateConstructorUsedError;
+  int get ticketId => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  String get processName => throw _privateConstructorUsedError;
   @JsonKey(name: 'ticketOwnerDisp')
-  String? get ownerDisp => throw _privateConstructorUsedError;
+  String get ownerDisp => throw _privateConstructorUsedError;
   @JsonKey(name: 'ticket_owner')
   String? get owner => throw _privateConstructorUsedError;
   @JsonKey(name: 'Avatar')
   String? get avatar => throw _privateConstructorUsedError;
   TicketStatus? get status => throw _privateConstructorUsedError;
   String? get priorityName => throw _privateConstructorUsedError;
-  String? get location => throw _privateConstructorUsedError;
+  String get location => throw _privateConstructorUsedError;
   String? get statusText => throw _privateConstructorUsedError;
   String? get reason => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_time')
-  String? get createdTime => throw _privateConstructorUsedError;
+  String get createdTime => throw _privateConstructorUsedError;
   @JsonKey(name: 'received_time')
   String? get receivedTime => throw _privateConstructorUsedError;
   @JsonKey(name: 'response_time')
@@ -64,18 +64,18 @@ abstract class $TicketModelCopyWith<$Res> {
       _$TicketModelCopyWithImpl<$Res, TicketModel>;
   @useResult
   $Res call(
-      {int? ticketId,
-      String? title,
-      String? processName,
-      @JsonKey(name: 'ticketOwnerDisp') String? ownerDisp,
+      {int ticketId,
+      String title,
+      String processName,
+      @JsonKey(name: 'ticketOwnerDisp') String ownerDisp,
       @JsonKey(name: 'ticket_owner') String? owner,
       @JsonKey(name: 'Avatar') String? avatar,
       TicketStatus? status,
       String? priorityName,
-      String? location,
+      String location,
       String? statusText,
       String? reason,
-      @JsonKey(name: 'created_time') String? createdTime,
+      @JsonKey(name: 'created_time') String createdTime,
       @JsonKey(name: 'received_time') String? receivedTime,
       @JsonKey(name: 'response_time') String? responseTime,
       @JsonKey(name: 'finished_time') String? finishedTime,
@@ -99,18 +99,18 @@ class _$TicketModelCopyWithImpl<$Res, $Val extends TicketModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? ticketId = freezed,
-    Object? title = freezed,
-    Object? processName = freezed,
-    Object? ownerDisp = freezed,
+    Object? ticketId = null,
+    Object? title = null,
+    Object? processName = null,
+    Object? ownerDisp = null,
     Object? owner = freezed,
     Object? avatar = freezed,
     Object? status = freezed,
     Object? priorityName = freezed,
-    Object? location = freezed,
+    Object? location = null,
     Object? statusText = freezed,
     Object? reason = freezed,
-    Object? createdTime = freezed,
+    Object? createdTime = null,
     Object? receivedTime = freezed,
     Object? responseTime = freezed,
     Object? finishedTime = freezed,
@@ -119,22 +119,22 @@ class _$TicketModelCopyWithImpl<$Res, $Val extends TicketModel>
     Object? processId = freezed,
   }) {
     return _then(_value.copyWith(
-      ticketId: freezed == ticketId
+      ticketId: null == ticketId
           ? _value.ticketId
           : ticketId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      title: freezed == title
+              as int,
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      processName: freezed == processName
+              as String,
+      processName: null == processName
           ? _value.processName
           : processName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ownerDisp: freezed == ownerDisp
+              as String,
+      ownerDisp: null == ownerDisp
           ? _value.ownerDisp
           : ownerDisp // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       owner: freezed == owner
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
@@ -151,10 +151,10 @@ class _$TicketModelCopyWithImpl<$Res, $Val extends TicketModel>
           ? _value.priorityName
           : priorityName // ignore: cast_nullable_to_non_nullable
               as String?,
-      location: freezed == location
+      location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       statusText: freezed == statusText
           ? _value.statusText
           : statusText // ignore: cast_nullable_to_non_nullable
@@ -163,10 +163,10 @@ class _$TicketModelCopyWithImpl<$Res, $Val extends TicketModel>
           ? _value.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdTime: freezed == createdTime
+      createdTime: null == createdTime
           ? _value.createdTime
           : createdTime // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       receivedTime: freezed == receivedTime
           ? _value.receivedTime
           : receivedTime // ignore: cast_nullable_to_non_nullable
@@ -204,18 +204,18 @@ abstract class _$$TicketModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? ticketId,
-      String? title,
-      String? processName,
-      @JsonKey(name: 'ticketOwnerDisp') String? ownerDisp,
+      {int ticketId,
+      String title,
+      String processName,
+      @JsonKey(name: 'ticketOwnerDisp') String ownerDisp,
       @JsonKey(name: 'ticket_owner') String? owner,
       @JsonKey(name: 'Avatar') String? avatar,
       TicketStatus? status,
       String? priorityName,
-      String? location,
+      String location,
       String? statusText,
       String? reason,
-      @JsonKey(name: 'created_time') String? createdTime,
+      @JsonKey(name: 'created_time') String createdTime,
       @JsonKey(name: 'received_time') String? receivedTime,
       @JsonKey(name: 'response_time') String? responseTime,
       @JsonKey(name: 'finished_time') String? finishedTime,
@@ -237,18 +237,18 @@ class __$$TicketModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? ticketId = freezed,
-    Object? title = freezed,
-    Object? processName = freezed,
-    Object? ownerDisp = freezed,
+    Object? ticketId = null,
+    Object? title = null,
+    Object? processName = null,
+    Object? ownerDisp = null,
     Object? owner = freezed,
     Object? avatar = freezed,
     Object? status = freezed,
     Object? priorityName = freezed,
-    Object? location = freezed,
+    Object? location = null,
     Object? statusText = freezed,
     Object? reason = freezed,
-    Object? createdTime = freezed,
+    Object? createdTime = null,
     Object? receivedTime = freezed,
     Object? responseTime = freezed,
     Object? finishedTime = freezed,
@@ -257,22 +257,22 @@ class __$$TicketModelImplCopyWithImpl<$Res>
     Object? processId = freezed,
   }) {
     return _then(_$TicketModelImpl(
-      ticketId: freezed == ticketId
+      ticketId: null == ticketId
           ? _value.ticketId
           : ticketId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      title: freezed == title
+              as int,
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      processName: freezed == processName
+              as String,
+      processName: null == processName
           ? _value.processName
           : processName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ownerDisp: freezed == ownerDisp
+              as String,
+      ownerDisp: null == ownerDisp
           ? _value.ownerDisp
           : ownerDisp // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       owner: freezed == owner
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
@@ -289,10 +289,10 @@ class __$$TicketModelImplCopyWithImpl<$Res>
           ? _value.priorityName
           : priorityName // ignore: cast_nullable_to_non_nullable
               as String?,
-      location: freezed == location
+      location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       statusText: freezed == statusText
           ? _value.statusText
           : statusText // ignore: cast_nullable_to_non_nullable
@@ -301,10 +301,10 @@ class __$$TicketModelImplCopyWithImpl<$Res>
           ? _value.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdTime: freezed == createdTime
+      createdTime: null == createdTime
           ? _value.createdTime
           : createdTime // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       receivedTime: freezed == receivedTime
           ? _value.receivedTime
           : receivedTime // ignore: cast_nullable_to_non_nullable
@@ -337,18 +337,18 @@ class __$$TicketModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TicketModelImpl extends _TicketModel {
   const _$TicketModelImpl(
-      {this.ticketId,
-      this.title,
-      this.processName,
-      @JsonKey(name: 'ticketOwnerDisp') this.ownerDisp,
+      {this.ticketId = -1,
+      this.title = '',
+      this.processName = '',
+      @JsonKey(name: 'ticketOwnerDisp') this.ownerDisp = '',
       @JsonKey(name: 'ticket_owner') this.owner,
       @JsonKey(name: 'Avatar') this.avatar,
       this.status,
       this.priorityName,
-      this.location,
+      this.location = '',
       this.statusText,
       this.reason,
-      @JsonKey(name: 'created_time') this.createdTime,
+      @JsonKey(name: 'created_time') this.createdTime = '',
       @JsonKey(name: 'received_time') this.receivedTime,
       @JsonKey(name: 'response_time') this.responseTime,
       @JsonKey(name: 'finished_time') this.finishedTime,
@@ -361,14 +361,17 @@ class _$TicketModelImpl extends _TicketModel {
       _$$TicketModelImplFromJson(json);
 
   @override
-  final int? ticketId;
+  @JsonKey()
+  final int ticketId;
   @override
-  final String? title;
+  @JsonKey()
+  final String title;
   @override
-  final String? processName;
+  @JsonKey()
+  final String processName;
   @override
   @JsonKey(name: 'ticketOwnerDisp')
-  final String? ownerDisp;
+  final String ownerDisp;
   @override
   @JsonKey(name: 'ticket_owner')
   final String? owner;
@@ -380,14 +383,15 @@ class _$TicketModelImpl extends _TicketModel {
   @override
   final String? priorityName;
   @override
-  final String? location;
+  @JsonKey()
+  final String location;
   @override
   final String? statusText;
   @override
   final String? reason;
   @override
   @JsonKey(name: 'created_time')
-  final String? createdTime;
+  final String createdTime;
   @override
   @JsonKey(name: 'received_time')
   final String? receivedTime;
@@ -488,18 +492,18 @@ class _$TicketModelImpl extends _TicketModel {
 
 abstract class _TicketModel extends TicketModel {
   const factory _TicketModel(
-      {final int? ticketId,
-      final String? title,
-      final String? processName,
-      @JsonKey(name: 'ticketOwnerDisp') final String? ownerDisp,
+      {final int ticketId,
+      final String title,
+      final String processName,
+      @JsonKey(name: 'ticketOwnerDisp') final String ownerDisp,
       @JsonKey(name: 'ticket_owner') final String? owner,
       @JsonKey(name: 'Avatar') final String? avatar,
       final TicketStatus? status,
       final String? priorityName,
-      final String? location,
+      final String location,
       final String? statusText,
       final String? reason,
-      @JsonKey(name: 'created_time') final String? createdTime,
+      @JsonKey(name: 'created_time') final String createdTime,
       @JsonKey(name: 'received_time') final String? receivedTime,
       @JsonKey(name: 'response_time') final String? responseTime,
       @JsonKey(name: 'finished_time') final String? finishedTime,
@@ -512,14 +516,14 @@ abstract class _TicketModel extends TicketModel {
       _$TicketModelImpl.fromJson;
 
   @override
-  int? get ticketId;
+  int get ticketId;
   @override
-  String? get title;
+  String get title;
   @override
-  String? get processName;
+  String get processName;
   @override
   @JsonKey(name: 'ticketOwnerDisp')
-  String? get ownerDisp;
+  String get ownerDisp;
   @override
   @JsonKey(name: 'ticket_owner')
   String? get owner;
@@ -531,14 +535,14 @@ abstract class _TicketModel extends TicketModel {
   @override
   String? get priorityName;
   @override
-  String? get location;
+  String get location;
   @override
   String? get statusText;
   @override
   String? get reason;
   @override
   @JsonKey(name: 'created_time')
-  String? get createdTime;
+  String get createdTime;
   @override
   @JsonKey(name: 'received_time')
   String? get receivedTime;

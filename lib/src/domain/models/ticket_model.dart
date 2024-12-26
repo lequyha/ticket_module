@@ -35,18 +35,18 @@ class TicketModel with _$TicketModel {
   const TicketModel._();
 
   const factory TicketModel({
-    final int? ticketId,
-    final String? title,
-    final String? processName,
-    @JsonKey(name: 'ticketOwnerDisp') final String? ownerDisp,
+    @Default(-1) final int ticketId,
+    @Default('') final String title,
+    @Default('') final String processName,
+    @Default('') @JsonKey(name: 'ticketOwnerDisp') final String ownerDisp,
     @JsonKey(name: 'ticket_owner') final String? owner,
     @JsonKey(name: 'Avatar') final String? avatar,
     final TicketStatus? status,
     final String? priorityName,
-    final String? location,
+    @Default('') final String location,
     final String? statusText,
     final String? reason,
-    @JsonKey(name: 'created_time') final String? createdTime,
+    @Default('') @JsonKey(name: 'created_time') final String createdTime,
     @JsonKey(name: 'received_time') final String? receivedTime,
     @JsonKey(name: 'response_time') final String? responseTime,
     @JsonKey(name: 'finished_time') final String? finishedTime,
@@ -78,6 +78,15 @@ class TicketModel with _$TicketModel {
   bool viewRatingTicket() {
     return (rating ?? 0) > 0;
   }
+
+  static const fakeData = TicketModel(
+    title: 'Ticket title',
+    processName: 'Process name',
+    location: 'Ticket location',
+    createdTime: 'Ticket created time',
+  );
+
+  static const empty = TicketModel();
 
   factory TicketModel.fromJson(Map<String, dynamic> json) =>
       _$TicketModelFromJson(json);

@@ -21,7 +21,7 @@ FullTicketModel _$FullTicketModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$FullTicketModel {
   @JsonKey(name: 'TicketInfos')
-  TicketModel? get ticket => throw _privateConstructorUsedError;
+  TicketModel get ticket => throw _privateConstructorUsedError;
   @JsonKey(name: 'display')
   List<DisplaytemModel> get displays => throw _privateConstructorUsedError;
   List<RelationshipItemModel> get relationships =>
@@ -55,7 +55,7 @@ abstract class $FullTicketModelCopyWith<$Res> {
       _$FullTicketModelCopyWithImpl<$Res, FullTicketModel>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'TicketInfos') TicketModel? ticket,
+      {@JsonKey(name: 'TicketInfos') TicketModel ticket,
       @JsonKey(name: 'display') List<DisplaytemModel> displays,
       List<RelationshipItemModel> relationships,
       List<RelativeItemModel> relatives,
@@ -65,7 +65,7 @@ abstract class $FullTicketModelCopyWith<$Res> {
       @JsonKey(name: 'PhaseOutput') List<IOPhaseModel> outputs,
       @JsonKey(name: 'TicketRole') int ticketRole});
 
-  $TicketModelCopyWith<$Res>? get ticket;
+  $TicketModelCopyWith<$Res> get ticket;
   $PhaseModelCopyWith<$Res>? get phase;
   $DetailFormsModelCopyWith<$Res>? get details;
 }
@@ -85,7 +85,7 @@ class _$FullTicketModelCopyWithImpl<$Res, $Val extends FullTicketModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? ticket = freezed,
+    Object? ticket = null,
     Object? displays = null,
     Object? relationships = null,
     Object? relatives = null,
@@ -96,10 +96,10 @@ class _$FullTicketModelCopyWithImpl<$Res, $Val extends FullTicketModel>
     Object? ticketRole = null,
   }) {
     return _then(_value.copyWith(
-      ticket: freezed == ticket
+      ticket: null == ticket
           ? _value.ticket
           : ticket // ignore: cast_nullable_to_non_nullable
-              as TicketModel?,
+              as TicketModel,
       displays: null == displays
           ? _value.displays
           : displays // ignore: cast_nullable_to_non_nullable
@@ -139,12 +139,8 @@ class _$FullTicketModelCopyWithImpl<$Res, $Val extends FullTicketModel>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $TicketModelCopyWith<$Res>? get ticket {
-    if (_value.ticket == null) {
-      return null;
-    }
-
-    return $TicketModelCopyWith<$Res>(_value.ticket!, (value) {
+  $TicketModelCopyWith<$Res> get ticket {
+    return $TicketModelCopyWith<$Res>(_value.ticket, (value) {
       return _then(_value.copyWith(ticket: value) as $Val);
     });
   }
@@ -187,7 +183,7 @@ abstract class _$$FullTicketModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'TicketInfos') TicketModel? ticket,
+      {@JsonKey(name: 'TicketInfos') TicketModel ticket,
       @JsonKey(name: 'display') List<DisplaytemModel> displays,
       List<RelationshipItemModel> relationships,
       List<RelativeItemModel> relatives,
@@ -198,7 +194,7 @@ abstract class _$$FullTicketModelImplCopyWith<$Res>
       @JsonKey(name: 'TicketRole') int ticketRole});
 
   @override
-  $TicketModelCopyWith<$Res>? get ticket;
+  $TicketModelCopyWith<$Res> get ticket;
   @override
   $PhaseModelCopyWith<$Res>? get phase;
   @override
@@ -218,7 +214,7 @@ class __$$FullTicketModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? ticket = freezed,
+    Object? ticket = null,
     Object? displays = null,
     Object? relationships = null,
     Object? relatives = null,
@@ -229,10 +225,10 @@ class __$$FullTicketModelImplCopyWithImpl<$Res>
     Object? ticketRole = null,
   }) {
     return _then(_$FullTicketModelImpl(
-      ticket: freezed == ticket
+      ticket: null == ticket
           ? _value.ticket
           : ticket // ignore: cast_nullable_to_non_nullable
-              as TicketModel?,
+              as TicketModel,
       displays: null == displays
           ? _value._displays
           : displays // ignore: cast_nullable_to_non_nullable
@@ -273,7 +269,7 @@ class __$$FullTicketModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FullTicketModelImpl extends _FullTicketModel {
   const _$FullTicketModelImpl(
-      {@JsonKey(name: 'TicketInfos') this.ticket,
+      {@JsonKey(name: 'TicketInfos') this.ticket = TicketModel.empty,
       @JsonKey(name: 'display') final List<DisplaytemModel> displays = const [],
       final List<RelationshipItemModel> relationships = const [],
       final List<RelativeItemModel> relatives = const [],
@@ -294,7 +290,7 @@ class _$FullTicketModelImpl extends _FullTicketModel {
 
   @override
   @JsonKey(name: 'TicketInfos')
-  final TicketModel? ticket;
+  final TicketModel ticket;
   final List<DisplaytemModel> _displays;
   @override
   @JsonKey(name: 'display')
@@ -407,7 +403,7 @@ class _$FullTicketModelImpl extends _FullTicketModel {
 
 abstract class _FullTicketModel extends FullTicketModel {
   const factory _FullTicketModel(
-          {@JsonKey(name: 'TicketInfos') final TicketModel? ticket,
+          {@JsonKey(name: 'TicketInfos') final TicketModel ticket,
           @JsonKey(name: 'display') final List<DisplaytemModel> displays,
           final List<RelationshipItemModel> relationships,
           final List<RelativeItemModel> relatives,
@@ -424,7 +420,7 @@ abstract class _FullTicketModel extends FullTicketModel {
 
   @override
   @JsonKey(name: 'TicketInfos')
-  TicketModel? get ticket;
+  TicketModel get ticket;
   @override
   @JsonKey(name: 'display')
   List<DisplaytemModel> get displays;

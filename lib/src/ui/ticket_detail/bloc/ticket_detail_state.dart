@@ -5,7 +5,7 @@ enum TicketDetailStatus { initial, loading, success, error }
 class TicketDetailState extends Equatable {
   const TicketDetailState._({
     this.status = TicketDetailStatus.initial,
-    this.fullTicket,
+    this.fullTicket = FullTicketModel.fakeData,
     this.phaseId = -1,
   });
 
@@ -17,11 +17,13 @@ class TicketDetailState extends Equatable {
   const TicketDetailState.error() : this._(status: TicketDetailStatus.error);
 
   final TicketDetailStatus status;
-  final FullTicketModel? fullTicket;
+  final FullTicketModel fullTicket;
   final int phaseId;
 
   @override
-  List<Object?> get props => [status, fullTicket, phaseId];
+  List<Object> get props => [status, fullTicket, phaseId];
 
   bool get showWorkflowIcon => status == TicketDetailStatus.success;
+
+  bool get isInitial => status == TicketDetailStatus.initial;
 }
