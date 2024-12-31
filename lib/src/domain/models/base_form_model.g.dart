@@ -46,6 +46,7 @@ _$BaseFormModelImpl _$$BaseFormModelImplFromJson(Map<String, dynamic> json) =>
           : MasterDataConfigModel.fromJson(
               json['mdConfig'] as Map<String, dynamic>),
       placeholderText: json['placeholderText'] as String?,
+      mobileValue: json['mobileValue'] as String?,
     );
 
 Map<String, dynamic> _$$BaseFormModelImplToJson(_$BaseFormModelImpl instance) =>
@@ -76,6 +77,7 @@ Map<String, dynamic> _$$BaseFormModelImplToJson(_$BaseFormModelImpl instance) =>
         'controlType': value,
       if (instance.mdConfig?.toJson() case final value?) 'mdConfig': value,
       if (instance.placeholderText case final value?) 'placeholderText': value,
+      if (instance.mobileValue case final value?) 'mobileValue': value,
     };
 
 const _$BaseControlTypeEnumMap = {

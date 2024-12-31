@@ -36,7 +36,8 @@ class DetailContentBloc extends Bloc<DetailContentEvent, DetailContentState> {
         }
       }
     }
-
+    baseForms =
+        baseForms.where((baseForm) => baseForm.display != false).toList();
     baseForms.sort((a, b) => (a.position ?? 0).compareTo((b.position ?? 0)));
     emit(DetailContentState.success(baseForms: baseForms));
   }

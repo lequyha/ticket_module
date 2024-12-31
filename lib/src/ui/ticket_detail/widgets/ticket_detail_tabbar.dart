@@ -17,7 +17,7 @@ class _TicketDetailTabbarState extends State<TicketDetailTabbar>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 2, vsync: this);
   }
 
   @override
@@ -40,7 +40,6 @@ class _TicketDetailTabbarState extends State<TicketDetailTabbar>
             indicatorColor: AppColors.kBorderActiveColor,
             tabs: [
               Tab(text: 'Request details'),
-              Tab(text: 'Document details'),
               Tab(text: 'Disscussion'),
             ],
           ),
@@ -64,7 +63,6 @@ class _TicketDetailTabbarState extends State<TicketDetailTabbar>
                   ],
                 ),
               ),
-              const Text('Document details'),
               const Text('Disscussion'),
             ],
           ),

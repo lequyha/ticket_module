@@ -33,7 +33,11 @@ class _DetailTableState extends State<DetailTable> {
         (columnIndex) {
           BaseFormModel value = values[(rowIndex * columnNumber + columnIndex)];
           final nameText = columns[columnIndex].nameText;
-          value = value.copyWith(nameText: nameText);
+          final type = columns[columnIndex].type;
+          value = value.copyWith(
+            nameText: nameText,
+            type: type,
+          );
           return value;
         },
         growable: false,
@@ -86,13 +90,24 @@ class _DetailTableState extends State<DetailTable> {
                           (column) => DataCell(
                             Builder(
                               builder: (context) {
-                                return Text(
-                                  column.text,
-                                  style:
-                                      context.textTheme.kSmallRegular.copyWith(
-                                    color: AppColors.kTextDefaultColor,
-                                  ),
-                                );
+                                switch (column.type) {
+                                  case BaseFormType.upload:
+                                    return Text(
+                                      column.filenames?.trim() ?? '',
+                                      style: context.textTheme.kSmallRegular
+                                          .copyWith(
+                                        color: AppColors.kTextLinkColor,
+                                      ),
+                                    );
+                                  default:
+                                    return Text(
+                                      column.text.trim(),
+                                      style: context.textTheme.kSmallRegular
+                                          .copyWith(
+                                        color: AppColors.kTextDefaultColor,
+                                      ),
+                                    );
+                                }
                               },
                             ),
                           ),

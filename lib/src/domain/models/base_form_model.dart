@@ -64,6 +64,7 @@ abstract class BaseFormModel with _$BaseFormModel {
     final BaseControlType? controlType,
     final MasterDataConfigModel? mdConfig,
     final String? placeholderText,
+    final String? mobileValue,
   }) = _BaseFormModel;
 
   factory BaseFormModel.fromJson(Map<String, dynamic> json) =>

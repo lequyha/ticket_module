@@ -45,6 +45,7 @@ mixin _$BaseFormModel {
   BaseControlType? get controlType => throw _privateConstructorUsedError;
   MasterDataConfigModel? get mdConfig => throw _privateConstructorUsedError;
   String? get placeholderText => throw _privateConstructorUsedError;
+  String? get mobileValue => throw _privateConstructorUsedError;
 
   /// Serializes this BaseFormModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -85,7 +86,8 @@ abstract class $BaseFormModelCopyWith<$Res> {
       int? columnId,
       BaseControlType? controlType,
       MasterDataConfigModel? mdConfig,
-      String? placeholderText});
+      String? placeholderText,
+      String? mobileValue});
 
   $FormConditionModelCopyWith<$Res>? get conditions;
   $DisplayConfigModelCopyWith<$Res>? get displayConfig;
@@ -129,6 +131,7 @@ class _$BaseFormModelCopyWithImpl<$Res, $Val extends BaseFormModel>
     Object? controlType = freezed,
     Object? mdConfig = freezed,
     Object? placeholderText = freezed,
+    Object? mobileValue = freezed,
   }) {
     return _then(_value.copyWith(
       display: freezed == display
@@ -219,6 +222,10 @@ class _$BaseFormModelCopyWithImpl<$Res, $Val extends BaseFormModel>
           ? _value.placeholderText
           : placeholderText // ignore: cast_nullable_to_non_nullable
               as String?,
+      mobileValue: freezed == mobileValue
+          ? _value.mobileValue
+          : mobileValue // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -296,7 +303,8 @@ abstract class _$$BaseFormModelImplCopyWith<$Res>
       int? columnId,
       BaseControlType? controlType,
       MasterDataConfigModel? mdConfig,
-      String? placeholderText});
+      String? placeholderText,
+      String? mobileValue});
 
   @override
   $FormConditionModelCopyWith<$Res>? get conditions;
@@ -341,6 +349,7 @@ class __$$BaseFormModelImplCopyWithImpl<$Res>
     Object? controlType = freezed,
     Object? mdConfig = freezed,
     Object? placeholderText = freezed,
+    Object? mobileValue = freezed,
   }) {
     return _then(_$BaseFormModelImpl(
       display: freezed == display
@@ -431,6 +440,10 @@ class __$$BaseFormModelImplCopyWithImpl<$Res>
           ? _value.placeholderText
           : placeholderText // ignore: cast_nullable_to_non_nullable
               as String?,
+      mobileValue: freezed == mobileValue
+          ? _value.mobileValue
+          : mobileValue // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -462,7 +475,8 @@ class _$BaseFormModelImpl implements _BaseFormModel {
       this.columnId,
       this.controlType,
       this.mdConfig,
-      this.placeholderText})
+      this.placeholderText,
+      this.mobileValue})
       : _columns = columns,
         _rows = rows,
         _values = values;
@@ -543,10 +557,12 @@ class _$BaseFormModelImpl implements _BaseFormModel {
   final MasterDataConfigModel? mdConfig;
   @override
   final String? placeholderText;
+  @override
+  final String? mobileValue;
 
   @override
   String toString() {
-    return 'BaseFormModel(display: $display, nameText: $nameText, value: $value, id: $id, definedId: $definedId, splitterId: $splitterId, text: $text, position: $position, columns: $columns, rows: $rows, values: $values, type: $type, filenames: $filenames, editableAttachmentBlock: $editableAttachmentBlock, conditions: $conditions, displayConfig: $displayConfig, defaultDisplay: $defaultDisplay, index: $index, columnId: $columnId, controlType: $controlType, mdConfig: $mdConfig, placeholderText: $placeholderText)';
+    return 'BaseFormModel(display: $display, nameText: $nameText, value: $value, id: $id, definedId: $definedId, splitterId: $splitterId, text: $text, position: $position, columns: $columns, rows: $rows, values: $values, type: $type, filenames: $filenames, editableAttachmentBlock: $editableAttachmentBlock, conditions: $conditions, displayConfig: $displayConfig, defaultDisplay: $defaultDisplay, index: $index, columnId: $columnId, controlType: $controlType, mdConfig: $mdConfig, placeholderText: $placeholderText, mobileValue: $mobileValue)';
   }
 
   @override
@@ -589,7 +605,9 @@ class _$BaseFormModelImpl implements _BaseFormModel {
             (identical(other.mdConfig, mdConfig) ||
                 other.mdConfig == mdConfig) &&
             (identical(other.placeholderText, placeholderText) ||
-                other.placeholderText == placeholderText));
+                other.placeholderText == placeholderText) &&
+            (identical(other.mobileValue, mobileValue) ||
+                other.mobileValue == mobileValue));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -617,7 +635,8 @@ class _$BaseFormModelImpl implements _BaseFormModel {
         columnId,
         controlType,
         mdConfig,
-        placeholderText
+        placeholderText,
+        mobileValue
       ]);
 
   /// Create a copy of BaseFormModel
@@ -660,7 +679,8 @@ abstract class _BaseFormModel implements BaseFormModel {
       final int? columnId,
       final BaseControlType? controlType,
       final MasterDataConfigModel? mdConfig,
-      final String? placeholderText}) = _$BaseFormModelImpl;
+      final String? placeholderText,
+      final String? mobileValue}) = _$BaseFormModelImpl;
 
   factory _BaseFormModel.fromJson(Map<String, dynamic> json) =
       _$BaseFormModelImpl.fromJson;
@@ -712,6 +732,8 @@ abstract class _BaseFormModel implements BaseFormModel {
   MasterDataConfigModel? get mdConfig;
   @override
   String? get placeholderText;
+  @override
+  String? get mobileValue;
 
   /// Create a copy of BaseFormModel
   /// with the given fields replaced by the non-null parameter values.
