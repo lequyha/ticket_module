@@ -24,7 +24,9 @@ class FullTicketModel with _$FullTicketModel {
     @Default([]) final List<RelationshipItemModel> relationships,
     @Default([]) final List<RelativeItemModel> relatives,
     @JsonKey(name: 'PhaseInfos') final PhaseModel? phase,
-    @JsonKey(name: 'TicketDetails') final DetailFormsModel? details,
+    @Default(DetailFormsModel.empty)
+    @JsonKey(name: 'TicketDetails')
+    final DetailFormsModel details,
     @Default([]) @JsonKey(name: 'PhaseInput') final List<IOPhaseModel> inputs,
     @Default([]) @JsonKey(name: 'PhaseOutput') final List<IOPhaseModel> outputs,
     @Default(0) @JsonKey(name: 'TicketRole') final int ticketRole,
@@ -32,6 +34,7 @@ class FullTicketModel with _$FullTicketModel {
 
   static const fakeData = FullTicketModel(
     ticket: TicketModel.fakeData,
+    details: DetailFormsModel.fakeData,
   );
 
   List<WorkflowItemModel> getWorkflowList() {

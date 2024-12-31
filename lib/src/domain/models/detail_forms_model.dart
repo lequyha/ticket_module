@@ -16,6 +16,10 @@ class DetailFormsModel with _$DetailFormsModel {
     final List<BaseFormModel>? multitable,
   }) = _DetailFormsModel;
 
+  static const empty = DetailFormsModel();
+
+  static const fakeData = DetailFormsModel();
+
   factory DetailFormsModel.fromJson(Map<String, dynamic> json) =>
       _$DetailFormsModelFromJson(json);
 }

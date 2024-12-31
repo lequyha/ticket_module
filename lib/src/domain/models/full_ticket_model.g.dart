@@ -30,7 +30,7 @@ _$FullTicketModelImpl _$$FullTicketModelImplFromJson(
           ? null
           : PhaseModel.fromJson(json['PhaseInfos'] as Map<String, dynamic>),
       details: json['TicketDetails'] == null
-          ? null
+          ? DetailFormsModel.empty
           : DetailFormsModel.fromJson(
               json['TicketDetails'] as Map<String, dynamic>),
       inputs: (json['PhaseInput'] as List<dynamic>?)
@@ -52,7 +52,7 @@ Map<String, dynamic> _$$FullTicketModelImplToJson(
       'relationships': instance.relationships.map((e) => e.toJson()).toList(),
       'relatives': instance.relatives.map((e) => e.toJson()).toList(),
       if (instance.phase?.toJson() case final value?) 'PhaseInfos': value,
-      if (instance.details?.toJson() case final value?) 'TicketDetails': value,
+      'TicketDetails': instance.details.toJson(),
       'PhaseInput': instance.inputs.map((e) => e.toJson()).toList(),
       'PhaseOutput': instance.outputs.map((e) => e.toJson()).toList(),
       'TicketRole': instance.ticketRole,

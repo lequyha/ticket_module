@@ -21,12 +21,12 @@ BaseFormModel _$BaseFormModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BaseFormModel {
   bool? get display => throw _privateConstructorUsedError;
-  String? get nameText => throw _privateConstructorUsedError;
+  String get nameText => throw _privateConstructorUsedError;
   dynamic get value => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
   int? get definedId => throw _privateConstructorUsedError;
   int? get splitterId => throw _privateConstructorUsedError;
-  String? get text => throw _privateConstructorUsedError;
+  String get text => throw _privateConstructorUsedError;
   int? get position => throw _privateConstructorUsedError;
   List<BaseFormModel>? get columns => throw _privateConstructorUsedError;
   List<BaseFormModel>? get rows => throw _privateConstructorUsedError;
@@ -64,12 +64,12 @@ abstract class $BaseFormModelCopyWith<$Res> {
   @useResult
   $Res call(
       {bool? display,
-      String? nameText,
+      String nameText,
       dynamic value,
       int? id,
       int? definedId,
       int? splitterId,
-      String? text,
+      String text,
       int? position,
       List<BaseFormModel>? columns,
       List<BaseFormModel>? rows,
@@ -108,12 +108,12 @@ class _$BaseFormModelCopyWithImpl<$Res, $Val extends BaseFormModel>
   @override
   $Res call({
     Object? display = freezed,
-    Object? nameText = freezed,
+    Object? nameText = null,
     Object? value = freezed,
     Object? id = freezed,
     Object? definedId = freezed,
     Object? splitterId = freezed,
-    Object? text = freezed,
+    Object? text = null,
     Object? position = freezed,
     Object? columns = freezed,
     Object? rows = freezed,
@@ -135,10 +135,10 @@ class _$BaseFormModelCopyWithImpl<$Res, $Val extends BaseFormModel>
           ? _value.display
           : display // ignore: cast_nullable_to_non_nullable
               as bool?,
-      nameText: freezed == nameText
+      nameText: null == nameText
           ? _value.nameText
           : nameText // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -155,10 +155,10 @@ class _$BaseFormModelCopyWithImpl<$Res, $Val extends BaseFormModel>
           ? _value.splitterId
           : splitterId // ignore: cast_nullable_to_non_nullable
               as int?,
-      text: freezed == text
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       position: freezed == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
@@ -275,12 +275,12 @@ abstract class _$$BaseFormModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {bool? display,
-      String? nameText,
+      String nameText,
       dynamic value,
       int? id,
       int? definedId,
       int? splitterId,
-      String? text,
+      String text,
       int? position,
       List<BaseFormModel>? columns,
       List<BaseFormModel>? rows,
@@ -320,12 +320,12 @@ class __$$BaseFormModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? display = freezed,
-    Object? nameText = freezed,
+    Object? nameText = null,
     Object? value = freezed,
     Object? id = freezed,
     Object? definedId = freezed,
     Object? splitterId = freezed,
-    Object? text = freezed,
+    Object? text = null,
     Object? position = freezed,
     Object? columns = freezed,
     Object? rows = freezed,
@@ -347,10 +347,10 @@ class __$$BaseFormModelImplCopyWithImpl<$Res>
           ? _value.display
           : display // ignore: cast_nullable_to_non_nullable
               as bool?,
-      nameText: freezed == nameText
+      nameText: null == nameText
           ? _value.nameText
           : nameText // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -367,10 +367,10 @@ class __$$BaseFormModelImplCopyWithImpl<$Res>
           ? _value.splitterId
           : splitterId // ignore: cast_nullable_to_non_nullable
               as int?,
-      text: freezed == text
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       position: freezed == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
@@ -441,12 +441,12 @@ class __$$BaseFormModelImplCopyWithImpl<$Res>
 class _$BaseFormModelImpl implements _BaseFormModel {
   const _$BaseFormModelImpl(
       {this.display,
-      this.nameText,
+      this.nameText = '',
       this.value,
       this.id,
       this.definedId,
       this.splitterId,
-      this.text,
+      this.text = '',
       this.position,
       final List<BaseFormModel>? columns,
       final List<BaseFormModel>? rows,
@@ -473,7 +473,8 @@ class _$BaseFormModelImpl implements _BaseFormModel {
   @override
   final bool? display;
   @override
-  final String? nameText;
+  @JsonKey()
+  final String nameText;
   @override
   final dynamic value;
   @override
@@ -483,7 +484,8 @@ class _$BaseFormModelImpl implements _BaseFormModel {
   @override
   final int? splitterId;
   @override
-  final String? text;
+  @JsonKey()
+  final String text;
   @override
   final int? position;
   final List<BaseFormModel>? _columns;
@@ -637,12 +639,12 @@ class _$BaseFormModelImpl implements _BaseFormModel {
 abstract class _BaseFormModel implements BaseFormModel {
   const factory _BaseFormModel(
       {final bool? display,
-      final String? nameText,
+      final String nameText,
       final dynamic value,
       final int? id,
       final int? definedId,
       final int? splitterId,
-      final String? text,
+      final String text,
       final int? position,
       final List<BaseFormModel>? columns,
       final List<BaseFormModel>? rows,
@@ -666,7 +668,7 @@ abstract class _BaseFormModel implements BaseFormModel {
   @override
   bool? get display;
   @override
-  String? get nameText;
+  String get nameText;
   @override
   dynamic get value;
   @override
@@ -676,7 +678,7 @@ abstract class _BaseFormModel implements BaseFormModel {
   @override
   int? get splitterId;
   @override
-  String? get text;
+  String get text;
   @override
   int? get position;
   @override

@@ -16,6 +16,8 @@ import 'package:ticket_module/src/data/repositories/remote/ticket_repository_imp
 import 'package:ticket_module/src/data/service/ticket_service.dart' as _i607;
 import 'package:ticket_module/src/domain/remote/ticket_repository.dart'
     as _i232;
+import 'package:ticket_module/src/ui/detail_content/bloc/detail_content_bloc.dart'
+    as _i888;
 import 'package:ticket_module/src/ui/ticket_detail/bloc/ticket_detail_bloc.dart'
     as _i523;
 import 'package:ticket_module/src/ui/workflow/bloc/workflow_bloc.dart' as _i656;
@@ -32,6 +34,7 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     gh.factory<_i656.WorkflowBloc>(() => _i656.WorkflowBloc());
+    gh.factory<_i888.DetailContentBloc>(() => _i888.DetailContentBloc());
     gh.lazySingleton<_i607.TicketService>(
         () => _i607.TicketService.create(gh<_i361.Dio>()));
     gh.lazySingleton<_i232.TicketRepository>(() =>

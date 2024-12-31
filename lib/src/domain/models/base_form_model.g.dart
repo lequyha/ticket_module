@@ -9,12 +9,12 @@ part of 'base_form_model.dart';
 _$BaseFormModelImpl _$$BaseFormModelImplFromJson(Map<String, dynamic> json) =>
     _$BaseFormModelImpl(
       display: json['display'] as bool?,
-      nameText: json['nameText'] as String?,
+      nameText: json['nameText'] as String? ?? '',
       value: json['value'],
       id: (json['id'] as num?)?.toInt(),
       definedId: (json['definedId'] as num?)?.toInt(),
       splitterId: (json['splitterId'] as num?)?.toInt(),
-      text: json['text'] as String?,
+      text: json['text'] as String? ?? '',
       position: (json['position'] as num?)?.toInt(),
       columns: (json['columns'] as List<dynamic>?)
           ?.map((e) => BaseFormModel.fromJson(e as Map<String, dynamic>))
@@ -51,12 +51,12 @@ _$BaseFormModelImpl _$$BaseFormModelImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$BaseFormModelImplToJson(_$BaseFormModelImpl instance) =>
     <String, dynamic>{
       if (instance.display case final value?) 'display': value,
-      if (instance.nameText case final value?) 'nameText': value,
+      'nameText': instance.nameText,
       if (instance.value case final value?) 'value': value,
       if (instance.id case final value?) 'id': value,
       if (instance.definedId case final value?) 'definedId': value,
       if (instance.splitterId case final value?) 'splitterId': value,
-      if (instance.text case final value?) 'text': value,
+      'text': instance.text,
       if (instance.position case final value?) 'position': value,
       if (instance.columns?.map((e) => e.toJson()).toList() case final value?)
         'columns': value,

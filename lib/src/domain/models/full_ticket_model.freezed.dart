@@ -30,7 +30,7 @@ mixin _$FullTicketModel {
   @JsonKey(name: 'PhaseInfos')
   PhaseModel? get phase => throw _privateConstructorUsedError;
   @JsonKey(name: 'TicketDetails')
-  DetailFormsModel? get details => throw _privateConstructorUsedError;
+  DetailFormsModel get details => throw _privateConstructorUsedError;
   @JsonKey(name: 'PhaseInput')
   List<IOPhaseModel> get inputs => throw _privateConstructorUsedError;
   @JsonKey(name: 'PhaseOutput')
@@ -60,14 +60,14 @@ abstract class $FullTicketModelCopyWith<$Res> {
       List<RelationshipItemModel> relationships,
       List<RelativeItemModel> relatives,
       @JsonKey(name: 'PhaseInfos') PhaseModel? phase,
-      @JsonKey(name: 'TicketDetails') DetailFormsModel? details,
+      @JsonKey(name: 'TicketDetails') DetailFormsModel details,
       @JsonKey(name: 'PhaseInput') List<IOPhaseModel> inputs,
       @JsonKey(name: 'PhaseOutput') List<IOPhaseModel> outputs,
       @JsonKey(name: 'TicketRole') int ticketRole});
 
   $TicketModelCopyWith<$Res> get ticket;
   $PhaseModelCopyWith<$Res>? get phase;
-  $DetailFormsModelCopyWith<$Res>? get details;
+  $DetailFormsModelCopyWith<$Res> get details;
 }
 
 /// @nodoc
@@ -90,7 +90,7 @@ class _$FullTicketModelCopyWithImpl<$Res, $Val extends FullTicketModel>
     Object? relationships = null,
     Object? relatives = null,
     Object? phase = freezed,
-    Object? details = freezed,
+    Object? details = null,
     Object? inputs = null,
     Object? outputs = null,
     Object? ticketRole = null,
@@ -116,10 +116,10 @@ class _$FullTicketModelCopyWithImpl<$Res, $Val extends FullTicketModel>
           ? _value.phase
           : phase // ignore: cast_nullable_to_non_nullable
               as PhaseModel?,
-      details: freezed == details
+      details: null == details
           ? _value.details
           : details // ignore: cast_nullable_to_non_nullable
-              as DetailFormsModel?,
+              as DetailFormsModel,
       inputs: null == inputs
           ? _value.inputs
           : inputs // ignore: cast_nullable_to_non_nullable
@@ -163,12 +163,8 @@ class _$FullTicketModelCopyWithImpl<$Res, $Val extends FullTicketModel>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $DetailFormsModelCopyWith<$Res>? get details {
-    if (_value.details == null) {
-      return null;
-    }
-
-    return $DetailFormsModelCopyWith<$Res>(_value.details!, (value) {
+  $DetailFormsModelCopyWith<$Res> get details {
+    return $DetailFormsModelCopyWith<$Res>(_value.details, (value) {
       return _then(_value.copyWith(details: value) as $Val);
     });
   }
@@ -188,7 +184,7 @@ abstract class _$$FullTicketModelImplCopyWith<$Res>
       List<RelationshipItemModel> relationships,
       List<RelativeItemModel> relatives,
       @JsonKey(name: 'PhaseInfos') PhaseModel? phase,
-      @JsonKey(name: 'TicketDetails') DetailFormsModel? details,
+      @JsonKey(name: 'TicketDetails') DetailFormsModel details,
       @JsonKey(name: 'PhaseInput') List<IOPhaseModel> inputs,
       @JsonKey(name: 'PhaseOutput') List<IOPhaseModel> outputs,
       @JsonKey(name: 'TicketRole') int ticketRole});
@@ -198,7 +194,7 @@ abstract class _$$FullTicketModelImplCopyWith<$Res>
   @override
   $PhaseModelCopyWith<$Res>? get phase;
   @override
-  $DetailFormsModelCopyWith<$Res>? get details;
+  $DetailFormsModelCopyWith<$Res> get details;
 }
 
 /// @nodoc
@@ -219,7 +215,7 @@ class __$$FullTicketModelImplCopyWithImpl<$Res>
     Object? relationships = null,
     Object? relatives = null,
     Object? phase = freezed,
-    Object? details = freezed,
+    Object? details = null,
     Object? inputs = null,
     Object? outputs = null,
     Object? ticketRole = null,
@@ -245,10 +241,10 @@ class __$$FullTicketModelImplCopyWithImpl<$Res>
           ? _value.phase
           : phase // ignore: cast_nullable_to_non_nullable
               as PhaseModel?,
-      details: freezed == details
+      details: null == details
           ? _value.details
           : details // ignore: cast_nullable_to_non_nullable
-              as DetailFormsModel?,
+              as DetailFormsModel,
       inputs: null == inputs
           ? _value._inputs
           : inputs // ignore: cast_nullable_to_non_nullable
@@ -274,7 +270,7 @@ class _$FullTicketModelImpl extends _FullTicketModel {
       final List<RelationshipItemModel> relationships = const [],
       final List<RelativeItemModel> relatives = const [],
       @JsonKey(name: 'PhaseInfos') this.phase,
-      @JsonKey(name: 'TicketDetails') this.details,
+      @JsonKey(name: 'TicketDetails') this.details = DetailFormsModel.empty,
       @JsonKey(name: 'PhaseInput') final List<IOPhaseModel> inputs = const [],
       @JsonKey(name: 'PhaseOutput') final List<IOPhaseModel> outputs = const [],
       @JsonKey(name: 'TicketRole') this.ticketRole = 0})
@@ -323,7 +319,7 @@ class _$FullTicketModelImpl extends _FullTicketModel {
   final PhaseModel? phase;
   @override
   @JsonKey(name: 'TicketDetails')
-  final DetailFormsModel? details;
+  final DetailFormsModel details;
   final List<IOPhaseModel> _inputs;
   @override
   @JsonKey(name: 'PhaseInput')
@@ -408,7 +404,7 @@ abstract class _FullTicketModel extends FullTicketModel {
           final List<RelationshipItemModel> relationships,
           final List<RelativeItemModel> relatives,
           @JsonKey(name: 'PhaseInfos') final PhaseModel? phase,
-          @JsonKey(name: 'TicketDetails') final DetailFormsModel? details,
+          @JsonKey(name: 'TicketDetails') final DetailFormsModel details,
           @JsonKey(name: 'PhaseInput') final List<IOPhaseModel> inputs,
           @JsonKey(name: 'PhaseOutput') final List<IOPhaseModel> outputs,
           @JsonKey(name: 'TicketRole') final int ticketRole}) =
@@ -433,7 +429,7 @@ abstract class _FullTicketModel extends FullTicketModel {
   PhaseModel? get phase;
   @override
   @JsonKey(name: 'TicketDetails')
-  DetailFormsModel? get details;
+  DetailFormsModel get details;
   @override
   @JsonKey(name: 'PhaseInput')
   List<IOPhaseModel> get inputs;

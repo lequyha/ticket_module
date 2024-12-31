@@ -1,5 +1,6 @@
 import 'package:core_module/core_module.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_module/src/ui/ticket_detail/widgets/ticket_detail_tab.dart';
 import 'package:ticket_module/src/ui/ticket_detail/widgets/ticket_infomation.dart';
 
 class TicketDetailTabbar extends StatefulWidget {
@@ -52,12 +53,16 @@ class _TicketDetailTabbarState extends State<TicketDetailTabbar>
           child: TabBarView(
             controller: _tabController,
             children: [
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  TicketInfomation(),
-                ],
+              SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  spacing: AppSpace.space8,
+                  children: [
+                    TicketInfomation(),
+                    TicketDetailTab(),
+                  ],
+                ),
               ),
               const Text('Document details'),
               const Text('Disscussion'),

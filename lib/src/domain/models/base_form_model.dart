@@ -42,12 +42,12 @@ abstract class BaseFormModel with _$BaseFormModel {
   @JsonSerializable(includeIfNull: false, explicitToJson: true)
   const factory BaseFormModel({
     final bool? display,
-    final String? nameText,
+    @Default('') final String nameText,
     final dynamic value,
     final int? id,
     final int? definedId,
     final int? splitterId,
-    final String? text,
+    @Default('') final String text,
     final int? position,
     final List<BaseFormModel>? columns,
     final List<BaseFormModel>? rows,
