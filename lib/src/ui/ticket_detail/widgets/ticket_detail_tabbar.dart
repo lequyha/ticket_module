@@ -1,10 +1,13 @@
 import 'package:core_module/core_module.dart';
+import 'package:discussion_module/discussion_module.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_module/src/ui/ticket_detail/widgets/ticket_detail_tab.dart';
 import 'package:ticket_module/src/ui/ticket_detail/widgets/ticket_infomation.dart';
 
 class TicketDetailTabbar extends StatefulWidget {
-  const TicketDetailTabbar({super.key});
+  final int ticketId;
+
+  const TicketDetailTabbar({super.key, required this.ticketId});
 
   @override
   State<TicketDetailTabbar> createState() => _TicketDetailTabbarState();
@@ -63,7 +66,10 @@ class _TicketDetailTabbarState extends State<TicketDetailTabbar>
                   ],
                 ),
               ),
-              const Text('Disscussion'),
+              CommentTab(
+                objectId: widget.ticketId,
+                tabController: _tabController,
+              ),
             ],
           ),
         ),

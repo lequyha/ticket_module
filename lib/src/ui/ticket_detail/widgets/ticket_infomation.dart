@@ -91,6 +91,9 @@ class TicketInfomation extends StatelessWidget {
                           ],
                         ),
                       ),
+                      Chip(
+                        label: Text(state.fullTicket.ticket.statusText ?? ''),
+                      )
                     ],
                   ),
                 ],

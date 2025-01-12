@@ -60,7 +60,9 @@ class TicketDetailScreen extends StatelessWidget {
                       top: Radius.circular(AppBorderRadius.kLargeBorderRadius),
                     ),
                   ),
-                  child: TicketDetailTabbar(),
+                  child: TicketDetailTabbar(
+                    ticketId: ticketId,
+                  ),
                 ),
               ),
             ],
