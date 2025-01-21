@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:core_module/core_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -149,11 +148,10 @@ class _WorkflowIconComponent extends StatelessWidget {
                   )
                 : null,
             padding: const EdgeInsets.all(AppPadding.kMediumPadding),
-            child: CachedNetworkImage(
-              imageUrl: workflowItem.image ?? '',
-              httpHeaders: const {},
-              placeholder: (context, url) => const CircularProgressIndicator(),
-              errorWidget: (context, url, error) => const Icon(Icons.error),
+            child: Avatar(
+              url: workflowItem.image ?? '',
+              height: AppConstant.kWorkflowRadius * 2,
+              width: AppConstant.kWorkflowRadius * 2,
             ),
           ),
           Visibility(
